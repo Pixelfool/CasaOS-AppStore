@@ -1,0 +1,94 @@
+{
+	"version": "1.0",
+	"title": "Nginx Proxy Manager",
+	"name": "nginxpm",
+	"icon": "https://nginxproxymanager.com/logo.svg",
+	"tagline": "Expose your services easily and securely",
+	"overview": "Easily forward to your websites running at home or otherwise, including free SSL, without having to know too much about Nginx or Letsencrypt.",
+	"thumbnail": "",
+	"screenshots": [],
+	"category": [
+		"Network"
+	],
+	"developer": {
+		"name": "jc21",
+		"website": "https://nginxproxymanager.com/",
+		"donate_text": "",
+		"donate_link": ""
+	},
+	"adaptor": {
+		"name": "Pixelfool",
+		"website": "",
+		"donate_text": "",
+		"donate_link": ""
+	},
+	"support": "",
+	"website": "",
+	"container": {
+		"image": "jc21/nginx-proxy-manager:latest",
+		"shell": "sh",
+		"privileged": false,
+		"network_model": "bridge",
+		"web_ui": {
+			"http": "80",
+			"path": "/"
+		},
+		"health_check": "",
+		"envs": [],
+		"ports": [
+			{
+				"container": "80",
+				"host": "80",
+				"type": "tcp",
+				"allocation": "automatic",
+				"configurable": "no",
+				"description": "http"
+			},
+			{
+				"container": "443",
+				"host": "443",
+				"type": "tcp",
+				"allocation": "automatic",
+				"configurable": "no",
+				"description": "https"
+			}
+
+		],
+		"volumes": [
+			{
+				"container": "/data",
+				"host": "/DATA/AppData/$AppID",
+				"mode": "rw",
+				"allocation": "automatic",
+				"configurable": "no",
+				"description": ""
+			}
+		],
+		"devices": [],
+		"constraints": {
+			"min_memory": 64,
+			"min_storage": 128
+		},
+		"restart_policy": "always",
+		"sysctls": [],
+		"cap_add": [],
+		"labels": [],
+		"host_name": "",
+		"cmd": []
+	},
+	"abilities": {
+		"notification": false,
+		"widgets": false,
+		"authentication": false,
+		"search": false,
+		"upnp": false
+	},
+	"tips": {
+		"before_install": []
+	},
+	"changelog": {
+		"latest_updates": "",
+		"url": ""
+	},
+	"latest_update_date": ""
+}
